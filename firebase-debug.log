@@ -1,0 +1,50 @@
+[debug] [2018-07-10T22:07:09.456Z] ----------------------------------------------------------------------
+[debug] [2018-07-10T22:07:09.458Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-07-10T22:07:09.458Z] CLI Version:   3.19.1
+[debug] [2018-07-10T22:07:09.458Z] Platform:      darwin
+[debug] [2018-07-10T22:07:09.458Z] Node Version:  v8.11.3
+[debug] [2018-07-10T22:07:09.461Z] Time:          Tue Jul 10 2018 15:07:09 GMT-0700 (PDT)
+[debug] [2018-07-10T22:07:09.461Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-10T22:07:09.484Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-10T22:07:09.485Z] > authorizing via signed-in user
+[debug] [2018-07-10T22:07:09.487Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-10T22:07:09.487Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/KUwrITkKPYswevyccc0cBu03aRRXN53tmyamG8HE-IU',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Jul 10 2018 15:07:09 GMT-0700 (PDT)
+[debug] [2018-07-10T22:07:09.681Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T22:07:09.722Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/firebasix-18111  
+  
+ Tue Jul 10 2018 15:07:09 GMT-0700 (PDT)
+[debug] [2018-07-10T22:07:10.151Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T22:07:10.153Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/firebasix-18111/tokens  
+  
+ Tue Jul 10 2018 15:07:10 GMT-0700 (PDT)
+[debug] [2018-07-10T22:07:10.813Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T22:07:10.815Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firebasix-18111  
+  
+ Tue Jul 10 2018 15:07:10 GMT-0700 (PDT)
+[debug] [2018-07-10T22:07:11.300Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/davisallen'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-07-10T22:07:13.187Z] Fetching environment
+[debug] [2018-07-10T22:07:13.191Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/100009474090:getServerAppConfig  
+  
+ Tue Jul 10 2018 15:07:13 GMT-0700 (PDT)
+[debug] [2018-07-10T22:07:13.192Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/100009474090/clients/_:getWebAppConfig  
+  
+ Tue Jul 10 2018 15:07:13 GMT-0700 (PDT)
+[debug] [2018-07-10T22:07:13.554Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T22:07:13.555Z] Starting @google-cloud/functions-emulator
+[debug] [2018-07-10T22:07:13.722Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-07-10T22:07:16.145Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.

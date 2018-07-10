@@ -1,3 +1,18 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
 *html {
     font-family: "Montserrat", sans-serif;
 }
@@ -90,9 +105,9 @@ html {
     border-radius: 25px 25px 25px 25px;
     background-image: url('../images/block.jpg');
     float: left;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-right: 100px;
-    margin-top: 200px;
+    margin-top: -150px;
     width: 520px;
     height: 350px;
     
@@ -117,7 +132,8 @@ button {
 }
 
 #jumbotron {
-    background-image: url('../images/hexlight.jpg');
+    background-image: url('../images/tickit.png');
+    background-repeat: repeat-x;
 
 }
 
