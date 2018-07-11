@@ -68,8 +68,8 @@
 		// Creates the new row
 	  var newRow = $("<tr>").append(
 		$("<td>").text(itemName),
-		$("<td>").text(highBidder),
-		$("<td>").text(highPrice),
+		$("<td>").text(ownerName),
+		$("<td>").text(auctionPrice),
 		$("<td>").text(expirationDate),
 	   
 	  );
