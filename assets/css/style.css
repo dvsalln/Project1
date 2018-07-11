@@ -98,18 +98,21 @@ html {
     letter-spacing: 10px;
     font-size: 48px;
     font-family: "Montserrat", sans-serif;
+    height: -300px;
+    margin-left: -100px;
 }
 
 #auctions {
+    position: fixed;
     border: 3px solid silver;
     border-radius: 25px 25px 25px 25px;
     background-image: url('../images/block.jpg');
     float: left;
-    margin-left: 20px;
+    margin-left: -5px;
     margin-right: 100px;
-    margin-top: -150px;
-    width: 520px;
-    height: 350px;
+    margin-top: -375px;
+    width: 300px;
+    height: 450px;
     
 }
 #main-jumbotron {
@@ -125,10 +128,15 @@ html {
 
 #clock {
     font-family: "Montserrat", sans-serif;
+    margin-left: -100px;
 }
 
-button {
-    font-family: "Montserrat", sans-serif;
+#toggle-auction {
+    margin-left: -100px;
+}
+
+#toggle-bid {
+    margin-left: 0px;
 }
 
 #jumbotron {
@@ -152,11 +160,11 @@ button {
     background-image: url('../images/block.jpg');
     border-radius: 25px 25px 25px 25px;
     border: 3px solid silver;
-    width: 450px;
+    width: 300px;
     height: 600px;
     position: fixed;
-    margin-left: 1990px;
-    margin-top: 50px;
+    margin-left: 1600px;
+    margin-top: -250px;
     text-align: center;
 } 
 
@@ -167,7 +175,7 @@ button {
     border: 3px solid silver;
     padding: 5px;
     height: 85px;
-    width: 450px;
+    width: 250px;
     position: fixed;
     margin-top: 650px;
     margin-left: 1990px;
@@ -191,6 +199,12 @@ td {
 }
 #card-container {
     margin-top: 10px;
+}
+
+#itemForm {
+    width: 250px;
+    height: 300px;
+
 }
 
 #form {

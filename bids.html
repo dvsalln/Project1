@@ -46,11 +46,7 @@
     </div>
   </div>
 
-  <div class="jumbotron" id="jumbotron">
-    
-      <h1 id="jumbotron-title"></h1>
-      
-      </div>
+
     
       <div class="jumbotron bg-train bg-dark text-white mb-0 radius-0" id="main-jumbotron">
           <div class="container" id="jumbotron-container">
@@ -62,10 +58,10 @@
               <br>
             <!-- Buttons -->
               <p>
-                  <button class="btn bg-dark btn-primary" type="button" data-toggle="collapse" data-target="#auctions" aria-expanded="false" aria-controls="auctions">
+                  <button id="toggle-auction" class="btn bg-dark btn-primary" type="button" data-toggle="collapse" data-target="#auctions" aria-expanded="false" aria-controls="auctions">
                     List an Item for Auction
                     </button>
-                  <button class="btn bg-dark btn-primary" type="button" data-toggle="collapse" data-target="#card" aria-expanded="false" aria-controls="card">
+                  <button id="toggle-bid" class="btn bg-dark btn-primary" type="button" data-toggle="collapse" data-target="#card" aria-expanded="false" aria-controls="card">
                     Submit a Bid
                   </button>
                 </p>
@@ -173,7 +169,7 @@
            <div class="input-group-addon">
              
            </div> 
-           <input id="itemName" name="itemName" placeholder="Name of Item for Auction" type="text" required="required" class="form-control here">
+           <input id="itemName" name="itemName" placeholder="Name of Item" type="text" required="required" class="form-control here">
          </div>
        </div>
      </div>
