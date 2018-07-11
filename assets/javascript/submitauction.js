@@ -21,22 +21,25 @@
   itemName = $("#itemName").val().trim();
   ownerName =  $("#ownerName").val().trim();
   auctionPrice =  $("#auctionPrice").val().trim();
-  expirationDate =  $("#expirationDate").val().trim();
+	expirationDate =  $("#expirationDate").val().trim();
+	highBidder = $("#highBidder").val().trim();
   
   console.log("Item Name: " +itemName);
   console.log("Owner Name: " +ownerName);
   console.log("Price: " +auctionPrice);
-  console.log("Expiration Date: " +expirationDate);
+	console.log("Expiration Date: " +expirationDate);
+	console.log("Highest Bidder: " +highBidder);
   
   // Creates variables to connect to firebase
   var itemInfo = {
 	  itemName: itemName,
 	  ownerName: ownerName,
 	  auctionPrice: auctionPrice,
-	  expirationDate: expirationDate
+		expirationDate: expirationDate,
+		highBidder: highBidder
 	};
 
-  // Pushes trainInfo to database
+  // Pushes itemInfo to database
   database.ref().push(itemInfo);
   
 
@@ -55,14 +58,15 @@
 	  itemName = childSnapshot.val().itemName;
 	  ownerName = childSnapshot.val().ownerName;
 	  auctionPrice = childSnapshot.val().auctionPrice;
-	  expirationDate = childSnapshot.val().expirationDate; 
+		expirationDate = childSnapshot.val().expirationDate; 
+		highBidder = childSnapshot.val().highBidder;
 	
 	  // Train Info
 	  console.log(itemName);
 	  console.log(ownerName);
 	  console.log(auctionPrice);
-	  console.log(expirationDate);
-	  
+		console.log(expirationDate);
+		console.log(highBidder);
 	  
 	 
 		// Creates the new row
@@ -71,11 +75,12 @@
 		$("<td>").text(ownerName),
 		$("<td>").text(auctionPrice),
 		$("<td>").text(expirationDate),
+		$("<td>").text(highBidder),
 	   
 	  );
-		newRow.attr("data", itemName).addClass("bidData").attr("data-ownerName", ownerName).attr("data-auctionPrice", auctionPrice).attr("data-expirationDate", expirationDate);
+		newRow.attr("data", itemName).addClass("bidData").attr("data-ownerName", ownerName).attr("data-auctionPrice", auctionPrice).attr("data-expirationDate", expirationDate).attr('data-highBidder', highBidder);
 	  // Append the new row to the table
-	  $("#mainSchedule > tbody").append(newRow);
+	  $("#mainAuction > tbody").append(newRow);
 	  
 	});
 	
@@ -87,7 +92,7 @@
     setInterval(displayTime, 1000);
 
 
-$("#mainSchedule").on('click' , "tr", function(event) {
+$("#mainAuction").on('click' , "tr", function(event) {
 	$("#bidItem").text($(this).attr('data'))
 	$("#highest-bidder").text($(this).attr('data-ownerName'))
 	$("#highest-price").text($(this).attr('data-auctionPrice'))
@@ -95,3 +100,4 @@ $("#mainSchedule").on('click' , "tr", function(event) {
 	console.log($(this).attr('data'))
 	// 'data-ownerName', 'data-auctionPrice', 'data-expirationDate'));
 })
+
