@@ -9,7 +9,7 @@
 	var itemName= "";
 	var ownerName= ""
 	var auctionPrice="";
-    var expirationDate = "";
+  var expirationDate = "";
     
 	
   // OnClick for form
@@ -68,8 +68,8 @@
 		// Creates the new row
 	  var newRow = $("<tr>").append(
 		$("<td>").text(itemName),
-		$("<td>").text(ownerName),
-		$("<td>").text(auctionPrice),
+		$("<td>").text(highBidder),
+		$("<td>").text(highPrice),
 		$("<td>").text(expirationDate),
 	   
 	  );
@@ -88,5 +88,10 @@
 
 
 $("#mainSchedule").on('click' , "tr", function(event) {
-	console.log($(this).attr('data', 'data-ownerName', 'data-auctionPrice', 'data-expirationDate'));
+	$("#bidItem").text($(this).attr('data'))
+	$("#highest-bidder").text($(this).attr('data-ownerName'))
+	$("#highest-price").text($(this).attr('data-auctionPrice'))
+	
+	console.log($(this).attr('data'))
+	// 'data-ownerName', 'data-auctionPrice', 'data-expirationDate'));
 })
