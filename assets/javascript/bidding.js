@@ -109,7 +109,7 @@ $("#submit-bid").on("click", function(event) {
     alert("You are now the highest bidder.");
 
     // Save the new price in Firebase
-    database.ref("/bidderData").set({
+    database.ref("/bidderData").push().set({
       highBidder: bidderName,
       highPrice: bidderPrice
     });
@@ -131,4 +131,14 @@ $("#submit-bid").on("click", function(event) {
     // Alert
     alert("Sorry that bid is too low. Try again.");
   }
+});
+
+// Example queryURL for Giphy API
+var queryURL = "";
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(response) {
+  console.log(response);
 });
