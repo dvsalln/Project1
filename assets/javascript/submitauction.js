@@ -21,25 +21,22 @@
   itemName = $("#itemName").val().trim();
   ownerName =  $("#ownerName").val().trim();
   auctionPrice =  $("#auctionPrice").val().trim();
-	expirationDate =  $("#expirationDate").val().trim();
-	
+  expirationDate =  $("#expirationDate").val().trim();
   
   console.log("Item Name: " +itemName);
   console.log("Owner Name: " +ownerName);
   console.log("Price: " +auctionPrice);
-	console.log("Expiration Date: " +expirationDate);
-	
+  console.log("Expiration Date: " +expirationDate);
   
   // Creates variables to connect to firebase
   var itemInfo = {
 	  itemName: itemName,
 	  ownerName: ownerName,
 	  auctionPrice: auctionPrice,
-		expirationDate: expirationDate,
-		
+	  expirationDate: expirationDate
 	};
 
-  // Pushes itemInfo to database
+  // Pushes trainInfo to database
   database.ref().push(itemInfo);
   
 
@@ -58,31 +55,27 @@
 	  itemName = childSnapshot.val().itemName;
 	  ownerName = childSnapshot.val().ownerName;
 	  auctionPrice = childSnapshot.val().auctionPrice;
-		expirationDate = childSnapshot.val().expirationDate;
-		bidderName = childSnapshot.val().bidderName;
-		
+	  expirationDate = childSnapshot.val().expirationDate; 
 	
-	
-	  // Item Info
+	  // Train Info
 	  console.log(itemName);
 	  console.log(ownerName);
 	  console.log(auctionPrice);
-		console.log(expirationDate);
-		
+	  console.log(expirationDate);
+	  
 	  
 	 
 		// Creates the new row
 	  var newRow = $("<tr>").append(
 		$("<td>").text(itemName),
 		$("<td>").text(ownerName),
-		$("<td>").text(highBidder),
-		$("<td>").text('$' +highPrice),
+		$("<td>").text(auctionPrice),
 		$("<td>").text(expirationDate),
-		
+	   
 	  );
-		newRow.attr("data", itemName).addClass("bidData").attr("data-ownerName", ownerName).attr("data-auctionPrice", auctionPrice).attr("data-expirationDate", expirationDate).attr('data-highBidder', highBidder);
+		newRow.attr("data", itemName).addClass("bidData").attr("data-ownerName", ownerName).attr("data-auctionPrice", auctionPrice).attr("data-expirationDate", expirationDate);
 	  // Append the new row to the table
-	  $("#mainAuction > tbody").append(newRow);
+	  $("#mainSchedule > tbody").append(newRow);
 	  
 	});
 	
@@ -94,25 +87,11 @@
     setInterval(displayTime, 1000);
 
 
-$("#mainAuction").on('click' , "tr", function(event) {
+$("#mainSchedule").on('click' , "tr", function(event) {
 	$("#bidItem").text($(this).attr('data'))
-	$("#highest-bidder").text($(this).attr('data-highBidder'))
-	$("#highest-price").text($(this).attr('data-highPrice'))
+	$("#highest-bidder").text($(this).attr('data-ownerName'))
+	$("#highest-price").text($(this).attr('data-auctionPrice'))
 	
 	console.log($(this).attr('data'))
-	console.log($(this).attr('data-highBidder'))
-	console.log($(this).attr('data-highPrice'))
-
-	
-	$("<tr>").append($("<td>", "#highest-bidder").text(highBidder),$("<td>", "#highest-price").text('$' +highPrice),
-);
-});
-
-var databaseRef = databaseRef.child("database");
-
-var newDatabaseRef = databaseRef.push();
-newDatabaseRef.set({
-  highBidder: highBidder,
-  highPrice: highPrice
-});
-	
+	// 'data-ownerName', 'data-auctionPrice', 'data-expirationDate'));
+})
